@@ -25,41 +25,41 @@
         {
             Queue<int> queue = new Queue<int>();
 
-            queue.Enqueue(i*grid.GetLength(0) + j);
+            queue.Enqueue(i*grid.GetLength(1) + j);
 
             while (queue.Count > 0)
             {
                 var idx = queue.Dequeue();
-                int row = idx / grid.GetLength(0);
-                int col = idx % grid.GetLength(0);
+                int row = idx / grid.GetLength(1);
+                int col = idx % grid.GetLength(1);
                 if (grid[ row, col] == '1')
                 {
                     grid[row, col] = '2';
 
                     
                     //UP
-                    if (row > 1)
+                    if (row > 0)
                     {
-                        queue.Enqueue((row - 1) * grid.GetLength(0) + col);
+                        queue.Enqueue((row - 1) * grid.GetLength(1) + col);
                     }
                     
                     //DOWN
                     if (row < grid.GetLength(0) - 1)
                     {
-                        queue.Enqueue((row + 1) * grid.GetLength(0) + col);
+                        queue.Enqueue((row + 1) * grid.GetLength(1) + col);
                     }
                     
                     //LEFT
                     if (col > 0)
                     {
-                         queue.Enqueue(row* grid.GetLength(0) + col - 1);
+                         queue.Enqueue(row* grid.GetLength(1) + col - 1);
                     }                   
                     
 
                     //RIGHT
                     if (col < grid.GetLength(1) -1)
                     {
-                        queue.Enqueue(row* grid.GetLength(0) + col + 1);
+                        queue.Enqueue(row* grid.GetLength(1) + col + 1);
                     }
 
                 }
