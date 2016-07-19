@@ -36,11 +36,27 @@
                 {
                     grid[row, col] = '2';
 
+                    
+                    //UP
+                    if (row > 1)
+                    {
+                        queue.Enqueue((row - 1) * grid.GetLength(0) + col);
+                    }
+                    
+                    //DOWN
                     if (row < grid.GetLength(0) - 1)
                     {
                         queue.Enqueue((row + 1) * grid.GetLength(0) + col);
                     }
+                    
+                    //LEFT
+                    if (col > 0)
+                    {
+                         queue.Enqueue(row* grid.GetLength(0) + col - 1);
+                    }                   
+                    
 
+                    //RIGHT
                     if (col < grid.GetLength(1) -1)
                     {
                         queue.Enqueue(row* grid.GetLength(0) + col + 1);
