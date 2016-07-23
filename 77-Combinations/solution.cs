@@ -20,7 +20,7 @@ public class Solution {
             for (int j = start; j <= n; j++)
             {
                 result.Add(j);
-                combine_help(results, result, start, n, j);
+                combine_help(results, result, j, n, k);
                 result.Remove(j);
             }
 
