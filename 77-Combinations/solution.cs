@@ -15,12 +15,13 @@ public class Solution {
             if (result.Count() == k)
             {
                 results.Add(result.ToList());
+                return;
             }
 
-            for (int j = start; j <= n; j++)
+            for (int j = start; j <=n; j++)
             {
                 result.Add(j);
-                combine_help(results, result, j, n, k);
+                combine_help(results, result, j+1, n, k);
                 result.Remove(j);
             }
 
