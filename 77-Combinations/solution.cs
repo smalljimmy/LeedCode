@@ -14,7 +14,7 @@ public class Solution {
         {
             if (result.Count() == k)
             {
-                results.Add(result);
+                results.Add(result.ToList());
             }
 
             for (int j = start; j <= n; j++)
