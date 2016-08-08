@@ -8,15 +8,15 @@
  */
 public class Solution {
     public ListNode DeleteDuplicates(ListNode head) {
-        
-        
-        ListNode result = new ListNode(head.val);
-        ListNode pre = result;
-        
+             
         if (head == null)
         {
             return null;
         }
+        
+        ListNode result = new ListNode(head.val);
+        ListNode pre = result;
+   
         
         while (head != null)
         {
